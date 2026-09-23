@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartResume AI | Intelligent Resume Analyzer & Job Role Matcher</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="grid-pattern"></div>
+    </div>
+
+    <div class="app">
+        <header>
+            <a href="/" class="brand">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <rect width="48" height="48" rx="14" fill="url(#brandGrad)"/>
+                        <path d="M14 34V14h10c4 0 7 3 7 7s-3 7-7 7h-6v6h-4zm4-10h6c1.7 0 3-1.3 3-3s-1.3-3-3-3h-6v6z" fill="#fff"/>
+                        <circle cx="33" cy="31" r="6" fill="#34d399"/>
+                        <defs>
+                            <linearGradient id="brandGrad" x1="0" y1="0" x2="48" y2="48">
+                                <stop stop-color="#6366f1"/>
+                                <stop offset="1" stop-color="#a855f7"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">SmartResume</span>
+                    <span class="brand-badge">AI</span>
+                </div>
+            </a>
+            <div class="header-tag">
+                <div class="tag-dot"></div>
+                AI-Powered Analysis
+            </div>
+        </header>
+
+        <main>
+            <section class="upload-view" id="uploadView">
+                <div class="upload-hero">
+                    <div class="hero-label">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                        Resume Analysis + Job Role Matching
+                    </div>
+                    
+                    <h1>Find Your Perfect <span>Job Role</span></h1>
+                    
+                    <p class="hero-text">
+                        Upload your resume and let our AI analyze your skills, 
+                        calculate ATS compatibility score, and match you with 
+                        the most suitable job roles based on your profile.
+                    </p>
+
+                    <div class="upload-box-wrap">
+                        <div class="upload-box" id="uploadBox">
+                            <div class="upload-visual">
+                                <div class="upload-pulse"></div>
+                                <div class="upload-icon">
+                                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="url(#upGrad)" stroke-width="1.5">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                        <polyline points="17 8 12 3 7 8"/>
+                                        <line x1="12" y1="3" x2="12" y2="15"/>
+                                        <defs>
+                                            <linearGradient id="upGrad" x1="3" y1="3" x2="21" y2="21">
+                                                <stop stop-color="#818cf8"/>
+                                                <stop offset="1" stop-color="#c084fc"/>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="upload-text">
+                                <h3>Drop your resume here</h3>
+                                <p>or click to select file</p>
+                            </div>
+                            <div class="upload-formats">
+                                <span>PDF</span>
+                                <span>DOCX</span>
+                            </div>
+                            <input type="file" id="fileInput" accept=".pdf,.docx,.doc" hidden>
+                        </div>
+
+                        <div class="file-selected" id="fileSelected">
+                            <div class="file-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.5">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <path d="M14 2v6h6"/>
+                                    <polyline points="9 15 11 17 15 13"/>
+                                </svg>
+                            </div>
+                            <div class="file-details">
+                                <span class="file-name" id="fileName">resume.pdf</span>
+                                <span class="file-size" id="fileSize">2.4 MB</span>
+                            </div>
+                            <button class="file-remove" id="fileRemove" type="button">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="6" x2="6" y2="18"/>
+                                    <line x1="6" y1="6" x2="18" y2="18"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="analyze-button" id="analyzeBtn" disabled>
+                        <span class="btn-content">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                            Analyze Resume
+                        </span>
+                        <span class="btn-loading">
+                            <svg class="spinner" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="60" stroke-linecap="round"/>
+                            </svg>
+                        </span>
+                    </button>
+
+                    <div class="features-list">
+                        <div class="feature">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            ATS Score
+                        </div>
+                        <div class="feature">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            Skill Analysis
+                        </div>
+                        <div class="feature">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="14" rx="2"/>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                            </svg>
+                            Job Matching
+                        </div>
+                        <div class="feature">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2">
+                                <path d="M12 2a10 10 0 1 0 10 10"/>
+                                <path d="M12 12l4-4"/>
+                                <path d="M16 4v4h4"/>
+                            </svg>
+                            AI Tips
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="loading-view" id="loadingView">
+                <div class="loader-wrap">
+                    <div class="loader-animation">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" class="loader-track"/>
+                            <circle cx="50" cy="50" r="40" class="loader-arc"/>
+                        </svg>
+                        <div class="loader-center">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#loadGrad)" stroke-width="1.5">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                                <defs>
+                                    <linearGradient id="loadGrad" x1="3" y1="2" x2="21" y2="22">
+                                        <stop stop-color="#818cf8"/>
+                                        <stop offset="1" stop-color="#c084fc"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Analyzing Your Resume</h3>
+                    <p id="loadingMsg">Extracting content...</p>
+                    <div class="progress-track">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="results-view" id="resultsView">
+                <div class="results-top">
+                    <button class="btn-back" id="backBtn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5"/>
+                            <polyline points="12 19 5 12 12 5"/>
+                        </svg>
+                        Analyze Another
+                    </button>
+                </div>
+
+                <div class="score-panel">
+                    <div class="score-ring-wrap">
+                        <svg class="score-ring" viewBox="0 0 200 200">
+                            <defs>
+                                <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#6366f1"/>
+                                    <stop offset="50%" stop-color="#8b5cf6"/>
+                                    <stop offset="100%" stop-color="#a855f7"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="100" cy="100" r="80" class="ring-bg"/>
+                            <circle cx="100" cy="100" r="80" class="ring-fill" id="ringFill"/>
+                        </svg>
+                        <div class="score-value">
+                            <span class="score-num" id="scoreNum">0</span>
+                            <span class="score-of">/100</span>
+                        </div>
+                    </div>
+                    <div class="score-info">
+                        <div class="quality-tag" id="qualityTag">Analyzing</div>
+                        <p class="quality-msg" id="qualityMsg">Please wait...</p>
+                        <div class="top-matches" id="topMatches"></div>
+                    </div>
+                </div>
+
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <div class="stat-icon purple">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </div>
+                        <div class="stat-data">
+                            <span class="stat-num" id="statSkills">0</span>
+                            <span class="stat-text">Skills</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon green">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="14" rx="2"/>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                            </svg>
+                        </div>
+                        <div class="stat-data">
+                            <span class="stat-num" id="statRoles">0</span>
+                            <span class="stat-text">Matched Roles</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon blue">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <path d="M14 2v6h6"/>
+                            </svg>
+                        </div>
+                        <div class="stat-data">
+                            <span class="stat-num" id="statSections">0</span>
+                            <span class="stat-text">Sections</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon orange">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 20h9"/>
+                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                            </svg>
+                        </div>
+                        <div class="stat-data">
+                            <span class="stat-num" id="statWords">0</span>
+                            <span class="stat-text">Words</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card tips-card" id="tipsCard">
+                    <div class="card-head">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                                <path d="M12 17h.01"/>
+                            </svg>
+                            AI-Powered Suggestions
+                        </h3>
+                        <span class="tag orange">Personalized</span>
+                    </div>
+                    <div class="tips-grid" id="tipsGrid"></div>
+                </div>
+
+                <div class="card">
+                    <div class="card-head">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            Detected Skills
+                        </h3>
+                        <span class="tag purple" id="skillsTag">0 skills</span>
+                    </div>
+                    <div class="skills-wrap" id="skillsWrap"></div>
+                </div>
+
+                <div class="card">
+                    <div class="card-head">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="14" rx="2"/>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                            </svg>
+                            Job Roles You Can Apply For
+                        </h3>
+                        <span class="tag green" id="rolesTag">0 matches</span>
+                    </div>
+                    <div class="roles-wrap" id="rolesWrap"></div>
+                </div>
+
+                <div class="charts-grid">
+                    <div class="card chart-card">
+                        <div class="card-head">
+                            <h3>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2">
+                                    <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
+                                    <path d="M22 12A10 10 0 0 0 12 2v10z"/>
+                                </svg>
+                                Skills Distribution
+                            </h3>
+                        </div>
+                        <div class="chart-area"><canvas id="chartSkills"></canvas></div>
+                    </div>
+                    <div class="card chart-card">
+                        <div class="card-head">
+                            <h3>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2">
+                                    <line x1="18" y1="20" x2="18" y2="10"/>
+                                    <line x1="12" y1="20" x2="12" y2="4"/>
+                                    <line x1="6" y1="20" x2="6" y2="14"/>
+                                </svg>
+                                Role Match Scores
+                            </h3>
+                        </div>
+                        <div class="chart-area"><canvas id="chartRoles"></canvas></div>
+                    </div>
+                    <div class="card chart-card">
+                        <div class="card-head">
+                            <h3>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    <path d="M3 9h18"/>
+                                    <path d="M9 21V9"/>
+                                </svg>
+                                Categories
+                            </h3>
+                        </div>
+                        <div class="chart-area"><canvas id="chartCategories"></canvas></div>
+                    </div>
+                    <div class="card chart-card">
+                        <div class="card-head">
+                            <h3>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2">
+                                    <path d="M12 20V10"/>
+                                    <path d="M18 20V4"/>
+                                    <path d="M6 20v-4"/>
+                                </svg>
+                                In-Demand Skills
+                            </h3>
+                        </div>
+                        <div class="chart-area"><canvas id="chartDemand"></canvas></div>
+                    </div>
+                </div>
+
+                <div class="card salary-card">
+                    <div class="card-head">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                            Expected Salary Range (LPA)
+                        </h3>
+                    </div>
+                    <div class="salary-row" id="salaryRow"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-inner">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+                <span>SmartResume AI</span>
+                <span class="sep">•</span>
+                <span>AI-Powered Resume Analysis</span>
+            </div>
+        </footer>
+    </div>
+
+    <div class="toasts" id="toasts"></div>
+    <script src="/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+job_id,job_role,category,experience_level,salary_min_lpa,salary_max_lpa,primary_skills,secondary_skills,description
+1,Data Scientist,Data Science,Mid-Level,12,28,"Python,Machine Learning,Statistics,SQL,Data Analysis","Deep Learning,TensorFlow,NLP,Pandas,NumPy",Build ML models and derive insights from data
+2,Data Analyst,Analytics,Entry-Level,4,10,"SQL,Excel,Python,Data Visualization,Statistics","Tableau,Power BI,Pandas,Google Analytics",Analyze data and create reports
+3,Machine Learning Engineer,Engineering,Mid-Level,15,35,"Python,Machine Learning,TensorFlow,PyTorch,MLOps","Docker,Kubernetes,AWS,Deep Learning,APIs",Deploy and scale ML models
+4,Data Engineer,Engineering,Mid-Level,12,28,"Python,SQL,Spark,Airflow,ETL","Kafka,Hadoop,AWS,Data Modeling,Scala",Build and maintain data pipelines
+5,AI Engineer,Engineering,Mid-Level,14,32,"Python,Deep Learning,NLP,Computer Vision,TensorFlow","PyTorch,Transformers,OpenCV,LLMs",Develop AI solutions and systems
+6,Business Analyst,Analytics,Entry-Level,5,12,"SQL,Excel,Communication,Requirements Analysis,Documentation","Tableau,Agile,JIRA,Stakeholder Management",Bridge business and technical teams
+7,Full Stack Developer,Development,Mid-Level,8,22,"JavaScript,React,Node.js,Python,SQL","MongoDB,Docker,AWS,TypeScript,REST APIs",Build web applications end-to-end
+8,Backend Developer,Development,Mid-Level,8,24,"Python,Java,SQL,REST APIs,Microservices","Docker,Redis,PostgreSQL,Django,Spring",Develop server-side applications
+9,Frontend Developer,Development,Mid-Level,6,18,"JavaScript,React,HTML,CSS,TypeScript","Angular,Vue,Redux,Webpack,Figma",Create user interfaces
+10,DevOps Engineer,Engineering,Mid-Level,10,26,"Docker,Kubernetes,Jenkins,AWS,Linux","Terraform,Ansible,CI/CD,Python,Monitoring",Manage infrastructure and deployments
+11,Cloud Engineer,Engineering,Mid-Level,12,28,"AWS,Azure,Docker,Kubernetes,Terraform","GCP,Linux,Networking,Security,Python",Design cloud infrastructure
+12,NLP Engineer,Data Science,Mid-Level,14,30,"Python,NLP,Transformers,Deep Learning,BERT","GPT,Huggingface,SpaCy,PyTorch,Text Mining",Build language processing systems
+13,Computer Vision Engineer,Data Science,Mid-Level,14,32,"Python,Computer Vision,OpenCV,Deep Learning,TensorFlow","YOLO,PyTorch,Image Processing,CNNs",Develop vision-based solutions
+14,Software Engineer,Development,Entry-Level,6,15,"Python,Java,Data Structures,Algorithms,Git","SQL,REST APIs,Docker,Problem Solving",Write clean and efficient code
+15,Product Analyst,Analytics,Mid-Level,8,18,"SQL,Python,A/B Testing,Product Metrics,Analytics","Tableau,Mixpanel,Amplitude,User Research",Analyze product performance
+16,Business Intelligence Developer,Analytics,Mid-Level,8,20,"SQL,Tableau,Power BI,ETL,Data Warehouse","Python,Looker,Data Modeling,Reporting",Create BI dashboards and reports
+17,Research Scientist,Research,Senior,20,45,"Python,Deep Learning,Research,Mathematics,Publications","PyTorch,NLP,Computer Vision,Statistics",Conduct AI/ML research
+18,MLOps Engineer,Engineering,Mid-Level,12,28,"Python,Docker,Kubernetes,MLflow,CI/CD","AWS,Airflow,Model Monitoring,Git",Operationalize ML systems
+19,Quantitative Analyst,Finance,Mid-Level,15,40,"Python,Statistics,Mathematics,Machine Learning,Finance","R,Risk Modeling,SQL,Time Series",Build quantitative models
+20,Analytics Manager,Analytics,Senior,18,35,"SQL,Analytics,Leadership,Strategy,Communication","Python,Tableau,Team Management,Stakeholder Management",Lead analytics teams
+21,Deep Learning Engineer,Data Science,Mid-Level,15,35,"Python,Deep Learning,TensorFlow,PyTorch,Neural Networks","CNNs,RNNs,Transformers,GPU Programming",Build deep learning models
+22,Python Developer,Development,Entry-Level,5,14,"Python,Django,Flask,SQL,REST APIs","FastAPI,Docker,PostgreSQL,Git",Develop Python applications
+23,Java Developer,Development,Mid-Level,8,22,"Java,Spring,Microservices,SQL,REST APIs","Hibernate,Docker,Kafka,Maven",Build Java enterprise applications
+24,React Developer,Development,Mid-Level,7,18,"React,JavaScript,TypeScript,HTML,CSS","Redux,Next.js,Testing,Webpack",Create React web applications
+25,Node.js Developer,Development,Mid-Level,7,20,"Node.js,JavaScript,Express,MongoDB,REST APIs","TypeScript,Docker,Redis,PostgreSQL",Build Node.js backends
+26,Site Reliability Engineer,Engineering,Mid-Level,12,30,"Linux,Docker,Kubernetes,Python,Monitoring","AWS,Terraform,Prometheus,Grafana,Automation",Ensure system reliability
+27,Database Administrator,Engineering,Mid-Level,8,20,"SQL,MySQL,PostgreSQL,Database Design,Performance Tuning","MongoDB,Redis,Backup,Security",Manage databases
+28,ETL Developer,Engineering,Mid-Level,8,18,"SQL,ETL,Python,Data Warehouse,Data Modeling","Informatica,SSIS,Airflow,Spark",Build data transformation pipelines
+29,Tableau Developer,Analytics,Mid-Level,6,16,"Tableau,SQL,Data Visualization,Analytics,Dashboards","Python,Power BI,Data Modeling",Create Tableau visualizations
+30,Power BI Developer,Analytics,Mid-Level,6,16,"Power BI,SQL,DAX,Data Visualization,Excel","Python,Azure,Data Modeling,Reporting",Build Power BI reports
+31,API Developer,Development,Mid-Level,8,20,"REST APIs,Python,Java,Documentation,Security","FastAPI,Swagger,OAuth,Microservices",Design and build APIs
+32,Automation Engineer,Engineering,Mid-Level,8,20,"Python,Selenium,Test Automation,CI/CD,Git","JavaScript,Jenkins,Docker,API Testing",Automate testing processes
+33,Blockchain Developer,Development,Mid-Level,12,30,"Solidity,Ethereum,Smart Contracts,Web3,JavaScript","Python,Cryptography,DeFi",Build blockchain applications
+34,Cybersecurity Analyst,Security,Mid-Level,10,24,"Security,Network Security,SIEM,Incident Response,Python","Penetration Testing,Cloud Security,Compliance",Protect systems from threats
+35,Technical Lead,Development,Senior,18,40,"System Design,Architecture,Leadership,Python,Java","Microservices,Cloud,Mentoring,Agile",Lead technical teams
